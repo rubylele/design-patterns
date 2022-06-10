@@ -1,4 +1,4 @@
-package objects;
+package subjects;
 
 public abstract class Toy {
 
