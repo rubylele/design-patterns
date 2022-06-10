@@ -10,7 +10,7 @@ public class Santa {
 
     private static Santa instance;
 
-    private final List<Toy> toysWarehouse;
+   
 
     public static Santa getInstance() {
         if(instance == null){
