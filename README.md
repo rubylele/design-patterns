@@ -1,5 +1,5 @@
 # design-patterns
-This project was created at Plovdiv University during lectures.
+This project was created at Plovdiv University during lectures. \
 Over time, Santa became more and more tired and one day decided to optimize the work in his workshop.
 He gathered his three most trusted dwarves and introduced them to the new work process.
 The process and way of working that Santa described was as follows:
@@ -12,4 +12,4 @@ Describe programmatically the new process of working in the workshop.
 To do this, use the templates Singleton (Santa Claus can be only one), Command, Observer, Abstract factory or Factory method.
 Places: Santa Claus, Magic board, I need dolls, I need wheels, Dwarf, Workshop, Doll, Bicycle
 Some of the conditions are for free interpretation. For example, you can decide for yourself what will happen to the manufactured toys, but the use of templates is mandatory. You have the freedom to make different types of dolls and wheels with matching factories or to add decorators for toys.
-Solutions should be returned as a link to repositories in the university's GitLab or other alternative code-sharing platform.
+
