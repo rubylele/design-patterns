@@ -1,10 +1,9 @@
+import objects.MagicBoard;
+import singleton.Santa;
 import subjects.Dwarf;
-import subjects.MagicBoard;
-import subjects.Santa;
 
 public class AppMain {
-
-    public static Santa santaInstance = Santa.getInstance();
+	public static Santa santaInstance = Santa.getInstance();
 
     static class Workshop {
 
@@ -22,4 +21,14 @@ public class AppMain {
             return magicBoard;
         }
     }
+    public static void main(String[] args) {
+        Workshop santasWorkshop = new Workshop("Dwarf's factory");
+//        santaInstance.requestAToy("bike", santasWorkshop.getMagicBoard());
+//        santaInstance.requestAToy("small bike", santasWorkshop.getMagicBoard());
+//        santaInstance.requestAToy("doll", santasWorkshop.getMagicBoard());
+        santaInstance.requestAToy("small doll", santasWorkshop.getMagicBoard());
+        santaInstance.showAllToys();
+    }
 }
+
+

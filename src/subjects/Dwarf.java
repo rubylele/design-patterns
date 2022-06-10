@@ -1,10 +1,11 @@
 package subjects;
 
-
-import factory.Toy;
-import subjects.Observable;
-import subjects.Observer;
-import subjects.Santa;
+import factory.BikeFactory;
+import factory.DollFactory;
+import objects.Toy;
+import observer.Observable;
+import observer.Observer;
+import singleton.Santa;
 
 public class Dwarf implements Observer {
 
@@ -12,18 +13,32 @@ public class Dwarf implements Observer {
 
     private Observable observedMagicBoard;
 
+    private final BikeFactory bikeFactory;
+
+    private final DollFactory dollFactory;
+
     public Dwarf(String name) {
         setName(name);
+        dollFactory = new DollFactory();
+        bikeFactory = new BikeFactory();
     }
 
     @Override
     public void update() {
         if(observedMagicBoard == null) {
-            throw new IllegalArgumentException("Magic board not specified!");
+            throw new IllegalArgumentException("Not listed on the magic board!");
         }
 
         Toy toyPreparedForSanta = null;
         String writtenToy = observedMagicBoard.getToy();
+
+        switch (writtenToy) {
+            case "doll" -> toyPreparedForSanta = dollFactory.produceAToy("doll");
+            case "small doll" -> toyPreparedForSanta = dollFactory.produceAToy("small doll");
+            case "small bike" -> toyPreparedForSanta = bikeFactory.produceAToy("small bike");
+            case "bike" -> toyPreparedForSanta = bikeFactory.produceAToy("bike");
+            default -> System.out.println("There is no such a type of a toy!");
+        }
 
         if(toyPreparedForSanta == null) {
             throw new IllegalArgumentException("Cannot be null!");

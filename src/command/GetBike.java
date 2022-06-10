@@ -1,6 +1,6 @@
 package command;
 
-import subjects.MagicBoard;
+import objects.MagicBoard;
 
 public class GetBike implements Command {
 
@@ -9,7 +9,6 @@ public class GetBike implements Command {
     public GetBike(MagicBoard magicBoard) {
         this.magicBoard = magicBoard;
     }
-
     @Override
     public void execute() {
         magicBoard.requestToyFromDwarfs("bike");

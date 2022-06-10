@@ -1,7 +1,10 @@
-package subjects;
+package objects;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import observer.Observable;
+import observer.Observer;
 
 public class MagicBoard implements Observable {
 
@@ -19,7 +22,7 @@ public class MagicBoard implements Observable {
             dwarfsInService.add(observer);
             observer.setMagicBoard(this);
         } else {
-            throw new IllegalArgumentException("The dwarf cannot be null!");
+            throw new IllegalArgumentException("Cannot be null of the Dwarfs!");
         }
     }
 
@@ -29,7 +32,7 @@ public class MagicBoard implements Observable {
             dwarfsInService.remove(observer);
             observer.removeMagicBoard();
         } else {
-            throw new IllegalArgumentException("The dwarf cannot be null!");
+            throw new IllegalArgumentException("Cannot be null of the Dwarfs!");
         }
     }
 
@@ -47,16 +50,11 @@ public class MagicBoard implements Observable {
 
     public void requestToyFromDwarfs(String requestedToyFromSanta) {
         if(requestedToyFromSanta == null || requestedToyFromSanta.isBlank()) {
-            throw new IllegalArgumentException("The requested toy cannot be null or blank!");
+            throw new IllegalArgumentException("Needed toy cannot be null or empty!");
         }
         requestedToy = requestedToyFromSanta;
-        System.out.printf("%s is written on the board! \n", requestedToyFromSanta);
+        System.out.printf("%s is already on the board! \n", requestedToyFromSanta);
         notifyObservers();
         System.out.println("---------------------------------------------------");
     }
-
-	public void requestToyFromDwarfs(String requestedToyFromSanta) {
-		// TODO Auto-generated method stub
-		
-	}
 }

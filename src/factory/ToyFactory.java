@@ -1,5 +1,7 @@
 package factory;
 
+import objects.Toy;
+
 public abstract class ToyFactory {
 
     public abstract Toy createAToy(String toyName);

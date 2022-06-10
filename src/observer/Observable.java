@@ -1,4 +1,4 @@
-package subjects;
+package observer;
 
 public interface Observable {
 

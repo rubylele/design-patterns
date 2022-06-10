@@ -1,6 +1,4 @@
-package subjects;
-
-import subjects.Observable;
+package observer;
 
 public interface Observer {
 
